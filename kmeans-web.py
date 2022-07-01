@@ -66,13 +66,13 @@ def run():
         keterangan = np.array(0)
         labels2 = (prediction[keterangan])
         if ans == 0:
-            st.error(
-                labels2
-            )
+            if labels2 == 0:
+                labels = "rumah komersil"
+                st.error("Termasuk klaster {}".format(labels))
         else:
-            st.success(
-                labels2
-            )
+            if labels2 == 1:
+                labels = "rumah mewah"
+                st.success("Termasuk klaster {}".format(labels))
 
 
 run()
